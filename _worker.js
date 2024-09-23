@@ -10,7 +10,8 @@ let userID = '66a986f4-0f84-4f6c-ad53-fce7c30e1930';
 
 //Find proxyIP : https://github.com/NiREvil/vless/blob/main/sub/ProxyIP.md
 //Find proxyIP : https://www.nslookup.io/domains/ipdb.rr.nu/dns-records/
-const proxyIPs= ['bpb.radically.pro']; // OR use ['bpb.radically.pro', 'turk.radicalization.ir', 'bpb.yousef.isegaro.com', 'proxyip.digitalocean.hw.090227.xyz'];
+const proxyIPs= ['turk.radicalization.ir
+']; // OR use ['bpb.radically.pro', 'turk.radicalization.ir', 'bpb.yousef.isegaro.com', 'proxyip.digitalocean.hw.090227.xyz'];
 const defaultHttpPorts = ['80', '8080', '2052', '2082', '2086', '2095', '8880'];
 const defaultHttpsPorts = ['443', '8443', '2053', '2083', '2087', '2096'];
 let proxyIP = proxyIPs[Math.floor(Math.random() * proxyIPs.length)];
