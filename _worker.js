@@ -3643,7 +3643,7 @@ async function getXrayWarpConfigs (env, client) {
     xrayWarpConfig.routing.rules[xrayWarpConfig.routing.rules.length - 1].outboundTag = 'warp';
     delete xrayWarpConfig.observatory;
     delete xrayWarpConfig.routing.balancers;
-    xrayWarpBestPing.remarks = client === 'M2rayNG' ? '🦁� Warp Pro Best Ping' : '🦁� Warp Best Ping';
+    xrayWarpBestPing.remarks = client === 'M2rayNG' ? '🦁 Warp Pro Best Ping' : '🦁 Warp Best Ping';
     xrayWarpBestPing.dns = await buildXrayDNSObject('1.1.1.1', localDNS, blockAds, bypassIran, bypassChina, blockPorn, false);
     xrayWarpBestPing.routing.rules = buildXrayRoutingRules(localDNS, blockAds, bypassIran, blockPorn, bypassLAN, bypassChina, blockUDP443, false, true);
     xrayWarpBestPing.outbounds.splice(0,1);
@@ -3674,7 +3674,7 @@ async function getXrayWarpConfigs (env, client) {
     });
 
     let xrayWoWBestPing = structuredClone(xrayWarpBestPing);
-    xrayWoWBestPing.remarks = client === 'M2rayNG' ? '🦁� WoW Pro Best Ping' : '🦁� WoW Best Ping';
+    xrayWoWBestPing.remarks = client === 'M2rayNG' ? '🦁 WoW Pro Best Ping' : '🦁 WoW Best Ping';
     xrayWoWBestPing.routing.balancers[0].selector = ['warp-out'];
     xrayWoWBestPing.observatory.subjectSelector = ['warp-out'];
     xrayWarpBestPing.outbounds = [...xrayWarpOutbounds, ...xrayWarpBestPing.outbounds];
@@ -3899,11 +3899,11 @@ async function getClashConfig (env, hostName, isWarp) {
                 "name": "★ Selector",
                 "type": "select",
                 "proxies": isWarp
-                    ? ['🦁� Warp Best Ping', '🦁� WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
-                    : ['🦁� Best Ping', ...outboundsRemarks ]
+                    ? ['🦁 Warp Best Ping', '🦁 WoW Best Ping', ...warpOutboundsRemarks, ...wowOutboundRemarks ]
+                    : ['🦁 Best Ping', ...outboundsRemarks ]
             },
             {
-                "name": isWarp ? `🦁� Warp Best Ping`: `🦁� Best Ping`,
+                "name": isWarp ? `🦁 Warp Best Ping`: `🦁 Best Ping`,
                 "type": "url-test",
                 "url": "http://www.gstatic.com/generate_204",
                 "interval": 30,
@@ -3915,7 +3915,7 @@ async function getClashConfig (env, hostName, isWarp) {
     };
 
     isWarp && config["proxy-groups"].push({
-        "name": "🦁� WoW Best Ping",
+        "name": "🦁 WoW Best Ping",
         "type": "url-test",
         "url": "http://www.gstatic.com/generate_204",
         "interval": 30,
@@ -4248,15 +4248,15 @@ async function getSingboxConfig (env, hostName, client, warpType) {
         const WOWOutbounds = await buildWoWOutbounds(env, client, proxySettings, warpConfigs);
         config.dns.servers[0].address = '1.1.1.1';
         config.outbounds[0].outbounds = client === 'hiddify'
-            ? ["🦁� Warp Pro Best Ping", "🦁� WoW Pro Best Ping"]
-            : ["🦁� Warp Best Ping", "🦁� WoW Best Ping"];
+            ? ["🦁 Warp Pro Best Ping", "🦁 WoW Pro Best Ping"]
+            : ["🦁 Warp Best Ping", "🦁 WoW Best Ping"];
         config.outbounds.splice(2, 0, structuredClone(config.outbounds[1]));
         config.outbounds[1].tag = client === 'hiddify' 
-            ? "🦁� Warp Pro Best Ping"
-            : "🦁� Warp Best Ping";
+            ? "🦁 Warp Pro Best Ping"
+            : "🦁 Warp Best Ping";
         config.outbounds[2].tag = client === 'hiddify'
-            ? "🦁� WoW Pro Best Ping"
-            : "🦁� WoW Best Ping";
+            ? "🦁 WoW Pro Best Ping"
+            : "🦁 WoW Best Ping";
         config.outbounds.push(...warpOutbounds, ...WOWOutbounds);
         warpOutbounds.forEach(outbound => {
             config.outbounds[0].outbounds.push(outbound.tag);
@@ -4495,11 +4495,11 @@ const singboxConfigTemp = {
         {
             type: "selector",
             tag: "proxy",
-            outbounds: ["🦁� Best Ping"]
+            outbounds: ["🦁 Best Ping"]
         },
         {
             type: "urltest",
-            tag: "🦁� Best Ping",
+            tag: "🦁 Best Ping",
             outbounds: [],
             url: "http://www.gstatic.com/generate_204",
             interval: "30s",
