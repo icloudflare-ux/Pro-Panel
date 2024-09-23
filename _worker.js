@@ -18,7 +18,7 @@ let dohURL = 'https://cloudflare-dns.com/dns-query';
 let trojanPassword = `M2rayNG`;
 // https://emn178.github.io/online-tools/sha224.html
 // https://www.atatus.com/tools/sha224-to-hash
-let hashPassword = '6dfd0e8e67ad3230498f80938cb924bc767b7db65eb4c9545fbe4ad7';
+let hashPassword = '465716058836739c74b8540bdcd3b3d2cc39c3252be0df623f289946';
 let panelVersion = 'v2.5.5';
 
 if (!isValidUUID(userID)) {
@@ -2700,7 +2700,7 @@ function renderErrorPage (message, error, refer) {
             <h1>M2rayNG Panel <span style="font-size: smaller;">${panelVersion}</span> 🦁</h2>
             <div id="error-message">
                 <h2>${message} ${refer 
-                    ? 'Please try again or refer to <a href="https://github.com/NiREvil/bia-pain-bache/blob/main/README.md">documents</a>' 
+                    ? 'Please try again or refer to <a href="https://github.com/icloudflare-ux/Pro-Panel/blob/main/README.md">documents</a>' 
                     : ''}
                 </h2>
                 <p><b>${error ? `⚠️ ${error}` : ''}</b></p>
