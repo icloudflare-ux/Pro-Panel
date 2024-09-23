@@ -1,4 +1,4 @@
-## $$\color{silver} \Large \text{BPB v2.5.5}$$
+## $$\color{silver} \Large \text{M2rayNG v2.5.5}$$
 
 > __[🇮🇷Persian](README-fa.md)__     __[🇬🇧English](README.md)__
 
